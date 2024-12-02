@@ -3,12 +3,11 @@
 import numpy as np
 
 def load_input(filename):
-
     """
-    Load lists of location IDs.
+    Load location IDs.
 
-    :return: Lists of location IDs
-    :rtype: list, list
+    :return: Arrays of location IDs
+    :rtype: np.array, np.array
     """
 
     # Store location IDs of each group
@@ -29,10 +28,9 @@ def load_input(filename):
     return location_ids_group_1, location_ids_group_2
 
 def part_1(location_ids_group_1, location_ids_group_2):
-
     """
-    Calculate the element-wise difference between two sets of numbers and return the sum of the
-    differences.
+    Calculate the element-wise difference between two sets
+    of numbers and return the sum of the differences.
 
     :return: Sum of element-wise differences between two sets of numbers
     :rtype: int
@@ -47,8 +45,8 @@ def part_1(location_ids_group_1, location_ids_group_2):
 
 def part_2(location_ids_group_1, location_ids_group_2):
     """
-    Calculate a total similarity score by adding up each number in the left list after multiplying
-    it by the number of times that number appears in the right list.
+    Calculate a total similarity score by adding up each number in the left list after
+    multiplying it by the number of times that number appears in the right list.
     """
 
     unique, counts = np.unique(location_ids_group_2, return_counts=True)
@@ -68,11 +66,11 @@ def main():
 
     filename = 'inputs/input_day_1.txt'
     location_ids_group_1, location_ids_group_2 = load_input(filename)
-    answer_part_1 = part_1(location_ids_group_1, location_ids_group_2)
-    answer_part_2 = part_2(location_ids_group_1, location_ids_group_2)
+    sum_of_distances = part_1(location_ids_group_1, location_ids_group_2)
+    similarity_score = part_2(location_ids_group_1, location_ids_group_2)
 
-    print('Part 1:', answer_part_1) # 1879048
-    print('Part 2:', answer_part_2) # 21024792
+    print('Part 1:', sum_of_distances) # 1879048
+    print('Part 2:', similarity_score) # 21024792
 
 if __name__ == '__main__':
     main()
