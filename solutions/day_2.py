@@ -2,7 +2,7 @@
 
 import numpy as np
 
-def load_input(filename):
+def load_input(file_path):
     """
     Load reports, each of which consists of a list of numbers
     called levels that are separated by spaces.
@@ -13,7 +13,7 @@ def load_input(filename):
 
     reports = []
 
-    with open(filename, encoding='utf-8') as file_reports:
+    with open(file_path, encoding='utf-8') as file_reports:
         for report in file_reports:
             levels = np.array([int(x) for x in report.split()])
             reports.append(levels)
@@ -97,8 +97,8 @@ def main():
     Print answers to problems Part1 and Part2.
     """
 
-    filename = 'inputs/input_day_2.txt'
-    reports = load_input(filename)
+    file_path = 'inputs/input_day_2.txt'
+    reports = load_input(file_path)
     num_safe_reports_part_1, unsafe_reports = part_1(reports)
     num_safe_reports_part_2 = part_2(num_safe_reports_part_1, unsafe_reports)
 

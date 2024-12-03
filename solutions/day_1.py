@@ -2,7 +2,7 @@
 
 import numpy as np
 
-def load_input(filename):
+def load_input(file_path):
     """
     Load location IDs.
 
@@ -15,7 +15,7 @@ def load_input(filename):
     location_ids_group_2 = []
 
     # Get two location IDs per line
-    with open(filename, encoding='utf-8') as file_location_ids:
+    with open(file_path, encoding='utf-8') as file_location_ids:
         for line in file_location_ids:
             location_ids_current = line.split()
             location_ids_group_1.append(int(location_ids_current[0]))
@@ -64,8 +64,8 @@ def main():
     Print answers to problems Part1 and Part2.
     """
 
-    filename = 'inputs/input_day_1.txt'
-    location_ids_group_1, location_ids_group_2 = load_input(filename)
+    file_path = 'inputs/input_day_1.txt'
+    location_ids_group_1, location_ids_group_2 = load_input(file_path)
     sum_of_distances = part_1(location_ids_group_1, location_ids_group_2)
     similarity_score = part_2(location_ids_group_1, location_ids_group_2)
 

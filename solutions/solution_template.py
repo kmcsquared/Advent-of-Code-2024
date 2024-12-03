@@ -1,8 +1,8 @@
 """Advent of Code solution for day ?: ?"""
 
-def load_input(filename):
+def load_input(file_path):
 
-    # with open(filename, encoding='utf-8') as f:
+    # with open(file_path, encoding='utf-8') as f:
         # for line in f:
 
     return
@@ -21,8 +21,8 @@ def main():
     Print answers to problems Part1 and Part2.
     """
 
-    filename = 'inputs/input_day_?.txt'
-    # = load_input(filename)
+    file_path = 'inputs/input_day_?.txt'
+    # = load_input(file_path)
     # answer_part_1 = part_1()
     # answer_part_2 = part_2()
 
